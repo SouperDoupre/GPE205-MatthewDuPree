@@ -17,7 +17,7 @@ public abstract class Controller : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        
+        ProccessInputs();
     }
     public virtual void ProccessInputs()
     {

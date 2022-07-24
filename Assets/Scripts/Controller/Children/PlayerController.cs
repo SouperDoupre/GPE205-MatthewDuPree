@@ -8,6 +8,7 @@ public class PlayerController : Controller
     public KeyCode moveBackwardKey;
     public KeyCode lookRightKey;
     public KeyCode lookLeftKey;
+    public KeyCode shootKey;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -18,9 +19,7 @@ public class PlayerController : Controller
     // Update is called once per frame
     public override void Update()
     {
-        //Calls function to proccess if keys are pressed for move and look
-        ProccessInputs();
-        //Runs data from parent class Controller in UPdate()
+        //Runs data from parent class Controller in Update()
         base.Update();
     }
     
@@ -44,6 +43,11 @@ public class PlayerController : Controller
         if (Input.GetKey(lookLeftKey))
         {
             pawn.LookLeft();
+        }
+        
+        if (Input.GetKeyDown(shootKey))
+        {
+            Debug.Log("Shot");
         }
     }
 }

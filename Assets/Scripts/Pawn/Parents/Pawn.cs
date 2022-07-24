@@ -28,5 +28,6 @@ public abstract class Pawn : MonoBehaviour
     public abstract void Movebackward();
     public abstract void LookRight();
     public abstract void LookLeft();
+    public abstract void Shoot();
 
 }
