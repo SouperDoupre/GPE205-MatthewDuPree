@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     //PlayerSpawn Point
     public Transform playerSpawnTransform;
+    //List of players
+    public List<PlayerController> players;
     private void Awake()
     {
         //If the instance doesn't exist yet...
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SpawnPlayer();
+
     }
     public void SpawnPlayer()
     {
