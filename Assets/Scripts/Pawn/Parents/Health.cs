@@ -13,18 +13,19 @@ public class Health : MonoBehaviour
         //Sets start health to max
         currentHealth = maxHealth;
         //Stops health from going above/below 100 or 0
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        
     }
-    public void TakeDamage(float amount, Pawn source)
+    public void TakeDamage(float damageDone, Pawn source)
     {
-        currentHealth = currentHealth - amount;
-        Debug.Log(source.name + "did" + amount + "damage to" + gameObject.name);
+        currentHealth = currentHealth - damageDone;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        Debug.Log(source.name + " did " + damageDone + " damage to " + gameObject.name);
         if(currentHealth <= 0)
         {
             Die(source);
@@ -34,8 +35,9 @@ public class Health : MonoBehaviour
     {
         Destroy(gameObject);
     }
-    public void Heal(float amount)
+    public void Heal(float healingDone)
     {
-        currentHealth = currentHealth + amount;
+        currentHealth = currentHealth + healingDone;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 }

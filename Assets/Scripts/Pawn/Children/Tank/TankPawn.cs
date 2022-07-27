@@ -30,6 +30,6 @@ public class TankPawn : Pawn
     }
     public override void Shoot()
     {
-
+        shooter.Shoot(bullet, bulletSpeed, damageDone, lifespan);
     }
 }

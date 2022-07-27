@@ -70,7 +70,7 @@ public class PlayerController : Controller
         
         if (Input.GetKeyDown(shootKey))
         {
-            Debug.Log("Shot");
+            pawn.Shoot();
         }
     }
 }

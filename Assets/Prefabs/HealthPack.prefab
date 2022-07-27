@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5924587623343873218
+--- !u!1 &3267753754369311275
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5924587623343873224}
-  - component: {fileID: 5924587623343873225}
-  - component: {fileID: 5924587623343873230}
-  - component: {fileID: 5924587623343873231}
-  - component: {fileID: 5924587623343873228}
-  - component: {fileID: 5924587623343873229}
+  - component: {fileID: 3267753754369311277}
+  - component: {fileID: 3267753754369311276}
+  - component: {fileID: 3267753754369311279}
+  - component: {fileID: 3267753754369311278}
+  - component: {fileID: 3267753754369311273}
+  - component: {fileID: 6778914088646425377}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: HealthPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5924587623343873224
+--- !u!4 &3267753754369311277
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924587623343873218}
+  m_GameObject: {fileID: 3267753754369311275}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: 1.9, z: 50.21}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 8.98, y: 0.75, z: 50.21}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5924587623343873225
+--- !u!33 &3267753754369311276
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924587623343873218}
+  m_GameObject: {fileID: 3267753754369311275}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5924587623343873230
+--- !u!23 &3267753754369311279
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924587623343873218}
+  m_GameObject: {fileID: 3267753754369311275}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,26 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5924587623343873231
+--- !u!135 &3267753754369311278
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924587623343873218}
+  m_GameObject: {fileID: 3267753754369311275}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &5924587623343873228
+--- !u!54 &3267753754369311273
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924587623343873218}
+  m_GameObject: {fileID: 3267753754369311275}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -113,17 +113,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5924587623343873229
+--- !u!114 &6778914088646425377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5924587623343873218}
+  m_GameObject: {fileID: 3267753754369311275}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ffcf3ce959a36c4cb539f3c0482ce96, type: 3}
+  m_Script: {fileID: 11500000, guid: 638eb6b1eb4c8224286a3aae5164b1ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageDone: 10
-  owner: {fileID: 8942296962655383773, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
+  healingDone: 25
+  owner: {fileID: 0}
