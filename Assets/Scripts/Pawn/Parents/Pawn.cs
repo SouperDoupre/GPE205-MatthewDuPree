@@ -20,6 +20,9 @@ public abstract class Pawn : MonoBehaviour
     public float damageDone;
     //Var to hold how long bullet is live if it doesnt hit something
     public float lifespan;
+    //Var for fire rate
+
+
     
     // Start is called before the first frame update
     public virtual void Start()
@@ -35,10 +38,12 @@ public abstract class Pawn : MonoBehaviour
     }
 
 
+
     public abstract void Moveforward();
     public abstract void Movebackward();
     public abstract void LookRight();
     public abstract void LookLeft();
     public abstract void Shoot();
+    public abstract void RotateTowards(Vector3 tagetPosition);
 
 }

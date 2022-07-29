@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    public float damageDone;
     public Pawn owner;
+    public float damageDone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +26,7 @@ public class BulletDamage : MonoBehaviour
         //Only damage if it has Health Comp
         if(enemyHealth != null)
         {
-            //Call the TakeDamage function inside the enemy health component
+            //Call the TakeDamage function inside the enemy health component and apply the damage
             enemyHealth.TakeDamage(damageDone, owner);
         }
         //Destroy ourselves on hit

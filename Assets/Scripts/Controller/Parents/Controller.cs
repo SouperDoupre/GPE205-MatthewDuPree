@@ -6,8 +6,6 @@ public abstract class Controller : MonoBehaviour
 {
     //Var to hold our Pawn
     public Pawn pawn;
-
-
     // Start is called before the first frame update
     public virtual void Start()
     {

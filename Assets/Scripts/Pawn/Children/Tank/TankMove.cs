@@ -17,8 +17,12 @@ public class TankMove : Movement
 
     public override void Move(Vector3 direction, float speed)
     {
-        Vector3 moveVector = direction.normalized * speed * Time.deltaTime;
-        body.MovePosition(body.position + moveVector);
+        if (body != null)
+        {
+            Vector3 moveVector = direction.normalized * speed * Time.deltaTime;
+            body.MovePosition(body.position + moveVector);
+        }
+
     }
     public override void Rotate( float lookSpeed)
     {

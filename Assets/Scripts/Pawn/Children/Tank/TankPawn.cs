@@ -32,4 +32,13 @@ public class TankPawn : Pawn
     {
         shooter.Shoot(bullet, bulletSpeed, damageDone, lifespan);
     }
+    public override void RotateTowards(Vector3 targetPosition)
+    {
+        //Finds the direction to look in
+        Vector3 vectorToTarget = targetPosition - transform.position;
+        //Instructions on how to look in that direction, using just this will make the pawn snap to that direction like a horror movie
+        Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget, Vector3.up);
+        //Restricts the speed of rotation to the lookSpeed
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
+    }
 }

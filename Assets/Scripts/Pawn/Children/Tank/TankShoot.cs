@@ -23,7 +23,7 @@ public class TankShoot : Shooter
         GameObject newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as GameObject;
         //Get bulletDamage
         BulletDamage bD = newBullet.GetComponent<BulletDamage>();
-        //If it does damage
+        //If it can do damage
         if(bD != null)
         {
             //this is how much damage it does

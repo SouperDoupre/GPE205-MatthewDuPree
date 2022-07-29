@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2422755394651807586
+--- !u!1 &9029731999104992447
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2422755394651807584}
-  - component: {fileID: 2422755394651807585}
+  - component: {fileID: 6851277056976920166}
+  - component: {fileID: 8908929948420740897}
   m_Layer: 0
-  m_Name: PlayerController
+  m_Name: AIController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2422755394651807584
+--- !u!4 &6851277056976920166
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2422755394651807586}
+  m_GameObject: {fileID: 9029731999104992447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 9.236639, y: 5.885026, z: 44.239494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2422755394651807585
+--- !u!114 &8908929948420740897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2422755394651807586}
+  m_GameObject: {fileID: 9029731999104992447}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4201e662ac9f55d4e8fb860a67804d51, type: 3}
+  m_Script: {fileID: 11500000, guid: 5caae25a9c1aba34ab612c23ec0f41a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pawn: {fileID: 8942296962655383773, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
-  moveForewardKey: 119
-  moveBackwardKey: 115
-  lookRightKey: 100
-  lookLeftKey: 97
-  shootKey: 323
+  pawn: {fileID: 0}
+  currentState: 0
+  target: {fileID: 0}
+  post: {fileID: 0}

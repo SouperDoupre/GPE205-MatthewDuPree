@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5924587623343873228}
   - component: {fileID: 5924587623343873229}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffcf3ce959a36c4cb539f3c0482ce96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 8942296962655383773, guid: bb08d82798b933c46b58a947115a7710, type: 3}
   damageDone: 0
-  owner: {fileID: 8942296962655383773, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
