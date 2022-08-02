@@ -36,8 +36,8 @@ public class Health : MonoBehaviour
     }
     public void Heal(float healingDone)
     {
-        currentHealth = currentHealth + healingDone;
-        //Stops health from going above/below 100 or 0
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+            currentHealth = currentHealth + healingDone;
+            //Stops health from going above/below 100 or 0
+            currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 }

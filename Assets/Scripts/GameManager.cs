@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
         Pawn newPawn = newPawnObj.GetComponent<Pawn>();
         //Hook them up
         newController.pawn = newPawn;
+        
     }
     //Prefabs
     public GameObject PCPreFab;

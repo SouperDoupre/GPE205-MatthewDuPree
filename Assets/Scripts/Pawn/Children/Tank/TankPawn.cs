@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class TankPawn : Pawn
 {
+    Rigidbody rb;
+    private float lastTimeShot;
+    AIController controller;
     public override void Start()
     {
         base.Start();
+        rb = GetComponent<Rigidbody>();
+        controller = GetComponent<AIController>();
     }
     public override void Update()
     {
@@ -14,31 +19,54 @@ public class TankPawn : Pawn
     }
     public override void Movebackward()
     {
-        move.Move(transform.forward, -moveSpeed);
+        if(rb != null)
+        {
+            move.Move(transform.forward, -moveSpeed);
+        }
     }
     public override void Moveforward()
     {
-        move.Move(transform.forward, moveSpeed);
+        if (rb != null)
+        {
+           move.Move(transform.forward, moveSpeed);
+        }
     }
     public override void LookRight()
     {
-        move.Rotate(lookSpeed);
+        if( rb != null)
+        {
+            move.Rotate(lookSpeed);
+        }
     }
     public override void LookLeft()
     {
-        move.Rotate(-lookSpeed);
+        if(rb != null)
+        {
+            move.Rotate(-lookSpeed);
+        }
     }
     public override void Shoot()
     {
-        shooter.Shoot(bullet, bulletSpeed, damageDone, lifespan);
+        float secondsPerShot = 1 / fireRate;
+        if(Time.time > lastTimeShot + secondsPerShot)
+        {
+            if (rb != null)
+            {
+                shooter.Shoot(bullet, bulletSpeed, damageDone, lifespan);
+            }
+            lastTimeShot = Time.time;
+        }
     }
     public override void RotateTowards(Vector3 targetPosition)
     {
-        //Finds the direction to look in
-        Vector3 vectorToTarget = targetPosition - transform.position;
-        //Instructions on how to look in that direction, using just this will make the pawn snap to that direction like a horror movie
-        Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget, Vector3.up);
-        //Restricts the speed of rotation to the lookSpeed
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
+        if(rb != null)
+        {
+            //Finds the direction to look in
+            Vector3 vectorToTarget = targetPosition - transform.position;
+            //Instructions on how to look in that direction, using just this will make the pawn snap to that direction like a horror movie
+            Quaternion targetRotation = Quaternion.LookRotation(vectorToTarget, Vector3.up);
+            //Restricts the speed of rotation to the lookSpeed
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
+        }
     }
 }

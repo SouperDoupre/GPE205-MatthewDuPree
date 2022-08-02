@@ -125,5 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ffcf3ce959a36c4cb539f3c0482ce96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  owner: {fileID: 7571497508853758275, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
   damageDone: 0
-  owner: {fileID: 8942296962655383773, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}

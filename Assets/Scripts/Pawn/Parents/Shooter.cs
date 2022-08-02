@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Shooter : MonoBehaviour
 {
+    public Transform firePoint;
     // Start is called before the first frame update
     public abstract void Start();
 

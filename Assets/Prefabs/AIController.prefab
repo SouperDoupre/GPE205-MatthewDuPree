@@ -44,6 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 0}
-  currentState: 0
+  currentState: 1
   target: {fileID: 0}
   post: {fileID: 0}
+  fleeDistance: 3
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  waypointStopDistance: 0.5
+  fieldOfView: 180
+  maxViewDistance: 5

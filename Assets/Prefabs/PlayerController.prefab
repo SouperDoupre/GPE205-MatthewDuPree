@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4201e662ac9f55d4e8fb860a67804d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pawn: {fileID: 8942296962655383773, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
+  pawn: {fileID: 7571497508853758275, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
   moveForewardKey: 119
   moveBackwardKey: 115
   lookRightKey: 100

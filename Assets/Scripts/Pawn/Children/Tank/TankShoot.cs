@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TankShoot : Shooter
 {
-    public Transform firePoint;
     // Start is called before the first frame update
     public override void Start()
     {
@@ -19,6 +18,7 @@ public class TankShoot : Shooter
     }
     public override void Shoot(GameObject bullet, float bulletSpeed, float damageDone, float lifespan)
     {
+        
         //Create new bullet
         GameObject newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as GameObject;
         //Get bulletDamage

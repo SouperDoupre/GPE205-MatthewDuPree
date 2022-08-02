@@ -21,14 +21,20 @@ public class Healing: MonoBehaviour
     {
         //Get the Health Comp from the gameObject that is being touched
         Health playerHealth = player.gameObject.GetComponent<Health>();
-        //Only damage if it has Health Comp
+        //Only heal if it has Health Comp
         if(playerHealth != null)
         {
-            //Do damage
-            playerHealth.Heal(healingDone);
+            //then only if current health is less than max health
+            if(playerHealth.currentHealth < playerHealth.maxHealth)
+            {
+                //do heal
+                playerHealth.Heal(healingDone);
 
-            //Destroy ourselves on hit
-            Destroy(gameObject);
+                //Destroy ourselves on hit
+                Destroy(gameObject);
+            }
+            
+
         }
     }
 }

@@ -20,10 +20,13 @@ public abstract class Pawn : MonoBehaviour
     public float damageDone;
     //Var to hold how long bullet is live if it doesnt hit something
     public float lifespan;
-    //Var for fire rate
+    //Var for rate of fire
+    public float fireRate;
+    //Var to hold how far can hear
+    public float hearingDistance;
+    public bool isLooping;
 
 
-    
     // Start is called before the first frame update
     public virtual void Start()
     {
