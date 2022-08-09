@@ -9,8 +9,12 @@ public class GameManager : MonoBehaviour
     public Transform playerSpawnTransform;
     //List of players
     public List<PlayerController> players;
+    public List<AIController> AIs;
+    RoomManager roomManager;
     private void Awake()
     {
+        roomManager = GetComponent<RoomManager>();
+        
         //If the instance doesn't exist yet...
         if(instance == null)
         {
@@ -48,4 +52,8 @@ public class GameManager : MonoBehaviour
     public GameObject PCPreFab;
     public GameObject TPPreFab;
 
+    public void SpawnEnemy()
+    {
+
+    }
 }

@@ -7,7 +7,7 @@ public class AIController : Controller
     public enum AIState { TargetAqu, Idle, Alert, Chase, Attack, Flee, RTB };
     public AIState currentState;
     //Last time we changed states
-    private float lastStateChangeTime;
+    protected float lastStateChangeTime;
     public GameObject target;
     public GameObject post;
     public float fleeDistance;
@@ -22,8 +22,31 @@ public class AIController : Controller
     // Start is called before the first frame update
     public override void Start()
     {
+        //If theres a GameManager
+        if (GameManager.instance != null)
+        {
+            //And it tracks players
+            if (GameManager.instance.AIs != null)
+            {
+                //Add the player to it's list
+                GameManager.instance.AIs.Add(this);
+            }
+        }
         ChangeState(AIState.Idle);
         base.Start();
+    }
+    public void OnDestroy()
+    {
+        //If theres a GameManager
+        if (GameManager.instance != null)
+        {
+            //And it tracks players
+            if (GameManager.instance.AIs != null)
+            {
+                //Take it off the list
+                GameManager.instance.AIs.Remove(this);
+            }
+        }
     }
     public virtual void ChangeState(AIState newState)
     {
@@ -39,84 +62,88 @@ public class AIController : Controller
             MakeDecisions();
             base.Update();
     }
-    public void MakeDecisions()
+    public virtual void MakeDecisions()
     {
-        if (pawn != null || target != null)
+        if (pawn != null)
         {
-            switch (currentState)
+            DoAquireTar();
+            if (target != null)
             {
-                case AIState.Idle:
-                    DoAquireTar();
-                    DoIdleState();
-                    //Check for transitions
-                    if (CanSee(target))
-                    {
-                        ChangeState(AIState.Alert);
-                    }
-                    break;
-                case AIState.Alert:
-                    DoAlertState();
-                    if (!CanSee(target))
-                    {
-                        ChangeState(AIState.Idle);
-                    }
-                    if (IsDistanceLessThan(target, 15))
-                    {
-                        ChangeState(AIState.Chase);
-                    }
-                    break;
-                case AIState.Chase:
-                    DoChaseState();
-                    if (IsDistanceLessThan(target, 10))
-                    {
-                        ChangeState(AIState.Attack);
-                    }
-                    if (IsDistanceGreaterThan(post, 50))
-                    {
-                        ChangeState(AIState.RTB);
-                    }
-                    if (IsHealthLessThanHalf())
-                    {
-                        ChangeState(AIState.Flee);
-                    }
-                    if (IsDistanceGreaterThan(target, 20))
-                    {
-                        ChangeState(AIState.RTB);
-                    }
-                    if (!CanSee(target))
-                    {
-                        ChangeState(AIState.Idle);
-                    }
-                    break;
-                case AIState.Attack:
-                    DoAttackState();
-                    if (IsHealthLessThanHalf())
-                    {
-                        ChangeState(AIState.Flee);
-                    }
-                    if (IsDistanceGreaterThan(target, 5))
-                    {
-                        ChangeState(AIState.Chase);
-                    }
-                    break;
-                case AIState.Flee:
-                    DoFleeState();
-                    if (!IsDistanceLessThan(post, 50))
-                    {
-                        ChangeState(AIState.RTB);
-                    }
-                    break;
-                case AIState.RTB:
-                    DoRTB();
-                    if (IsDistanceLessThan(target, 10))
-                    {
-                        ChangeState(AIState.Chase);
-                    }
-                    if (AmIAtBase(post, .5f))
-                    {
-                        ChangeState(AIState.Idle);
-                    }
-                    break;
+                switch (currentState)
+                {
+                    case AIState.Idle:
+                        
+                        DoIdleState();
+                        //Check for transitions
+                        if (CanSee(target))
+                        {
+                            ChangeState(AIState.Alert);
+                        }
+                        break;
+                    case AIState.Alert:
+                        DoAlertState();
+                        if (!CanSee(target))
+                        {
+                            ChangeState(AIState.Idle);
+                        }
+                        if (IsDistanceLessThan(target, 15))
+                        {
+                            ChangeState(AIState.Chase);
+                        }
+                        break;
+                    case AIState.Chase:
+                        DoChaseState();
+                        if (IsDistanceLessThan(target, 10))
+                        {
+                            ChangeState(AIState.Attack);
+                        }
+                        if (IsDistanceGreaterThan(post, 50))
+                        {
+                            ChangeState(AIState.RTB);
+                        }
+                        if (IsHealthLessThanHalf())
+                        {
+                            ChangeState(AIState.Flee);
+                        }
+                        if (IsDistanceGreaterThan(target, 20))
+                        {
+                            ChangeState(AIState.RTB);
+                        }
+                        if (!CanSee(target))
+                        {
+                            ChangeState(AIState.Idle);
+                        }
+                        break;
+                    case AIState.Attack:
+                        DoAttackState();
+                        if (IsHealthLessThanHalf())
+                        {
+                            ChangeState(AIState.Flee);
+                        }
+                        if (IsDistanceGreaterThan(target, 5))
+                        {
+                            ChangeState(AIState.Chase);
+                        }
+                        break;
+                    case AIState.Flee:
+                        DoFleeState();
+                        if (!IsDistanceLessThan(post, 50))
+                        {
+                            ChangeState(AIState.RTB);
+                        }
+                        break;
+                    case AIState.RTB:
+                        DoRTB();
+                        if (IsDistanceLessThan(target, 10))
+                        {
+                            ChangeState(AIState.Chase);
+                        }
+                        if (AmIAtBase(post, .5f))
+                        {
+                            ChangeState(AIState.Idle);
+                        }
+                        break;
+                }
             }
         }
     }
@@ -128,6 +155,7 @@ public class AIController : Controller
     protected virtual void DoIdleState()
     {
         Patrol();
+        DoAquireTar();
     }
     protected virtual void DoChaseState()
     {
@@ -207,7 +235,9 @@ public class AIController : Controller
         float flippedpercentOfFleeDistance = 1 - percentOfFleeDistance;
         //Moves the pawn in that direction at that distance
         Chase(pawn.transform.position + fleeVector * flippedpercentOfFleeDistance);
+        
     }
+
     public void TagetPlayerOne()
     {
         //If GameManager exits
@@ -321,24 +351,30 @@ public class AIController : Controller
             return false;
         }
         //if they are making noise, add volumeDistance in the noiseMaker to the hearinfDistance of this AI
-        float totalDistance = noiseMaker.noise + pawn.hearingDistance;
-        //if the distance between our pawn and the target is closer than this...
-        if (Vector3.Distance(pawn.transform.position, target.transform.position) <= totalDistance)
+        if(noiseMaker.noise >= 1)
         {
-            //...then we can hear them
-            return true;
+            float totalDistance = noiseMaker.noise + pawn.hearingDistance;
+            //if the distance between our pawn and the target is closer than this...
+            if (Vector3.Distance(pawn.transform.position, target.transform.position) <= totalDistance)
+            {
+                //...then we can hear them
+                return true;
+            }
+            else
+            {
+                //otherwise, we are too far to hear them
+                return false;
+            }
         }
         else
         {
-            //otherwise, we are too far to hear them
             return false;
         }
+
 
     }
     public bool CanSee(GameObject target)
     {
-        
-        
       //Find the vector from the agent to the target
       Vector3 agentToTargetVector = target.transform.position - pawn.transform.position;
       //Find the angle between the direction our agent is facing

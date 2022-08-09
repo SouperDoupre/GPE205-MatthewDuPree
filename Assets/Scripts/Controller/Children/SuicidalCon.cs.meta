@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d01a2151bbf9cf14e9f24a95d328d5a4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pawn: {fileID: 5991664581965856586, guid: fb6cf19992eb21f48aca44238372a3e0, type: 3}
+  - target: {fileID: 6203149938853676434, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
+  - post: {instanceID: 0}
+  - owner: {fileID: 5991664581965856586, guid: fb6cf19992eb21f48aca44238372a3e0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

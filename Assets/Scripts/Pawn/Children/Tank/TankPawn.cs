@@ -6,12 +6,10 @@ public class TankPawn : Pawn
 {
     Rigidbody rb;
     private float lastTimeShot;
-    AIController controller;
     public override void Start()
     {
         base.Start();
         rb = GetComponent<Rigidbody>();
-        controller = GetComponent<AIController>();
     }
     public override void Update()
     {

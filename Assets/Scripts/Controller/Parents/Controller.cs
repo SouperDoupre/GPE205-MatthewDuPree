@@ -19,6 +19,10 @@ public abstract class Controller : MonoBehaviour
         {
             ProccessInputs();
         }
+        else
+        {
+            return;
+        }
     }
     public virtual void ProccessInputs()
     {
