@@ -5,7 +5,7 @@ using UnityEngine;
 public class NoiseMaker : MonoBehaviour
 {
     public float volumeDistance;
-    public  float noise;
+    private  float noise;
     public KeyCode moveForewardKey = KeyCode.W;
     public KeyCode moveBackwardKey = KeyCode.S;
     // Start is called before the first frame update

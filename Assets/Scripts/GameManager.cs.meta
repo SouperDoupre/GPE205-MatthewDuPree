@@ -3,7 +3,10 @@ guid: f63c48e4e9aa9f548aece2d02a7a7e9c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerSpawnTransform: {fileID: 7157055417598953531, guid: ce8efa917396a5b41ae032bd93f13931, type: 3}
+  - PCPreFab: {fileID: 2422755394651807586, guid: 13ad2530bfab1714a8d9c24963302b9a, type: 3}
+  - TPPreFab: {fileID: 6203149938853676434, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
