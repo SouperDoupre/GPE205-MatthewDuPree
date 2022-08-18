@@ -46,9 +46,22 @@ public class FearfulAiCon : AIController
                    DoFleeState();
                    if (IsDistanceGreaterThan(target, 10))
                    {
-                       ChangeState(AIState.Idle);
+                        pawn.moveSpeed = pawn.moveSpeed / 2;
+                       ChangeState(AIState.RTB);
                    }
                    break;
+                case AIState.RTB:
+                    DoRTB();
+                    if (IsDistanceLessThan(target, 5))
+                    {
+                        ChangeState(AIState.Flee);
+                        pawn.moveSpeed = pawn.moveSpeed * 2;
+                    }
+                    if (AmIAtBase(post, waypointStopDistance))
+                    {
+                        ChangeState(AIState.Idle);
+                    }
+                    break;
            }
             
         }

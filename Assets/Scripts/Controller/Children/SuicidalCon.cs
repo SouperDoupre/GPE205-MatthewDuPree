@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SuicidalCon : AIController
 {
+
     public enum sAIState {TargetAqu, Idle, Chase};
     // Start is called before the first frame update
     public override void Start()
     {
+
+        DoAquireTar();
         base.Start();
     }
     // Update is called once per frame
@@ -15,6 +18,8 @@ public class SuicidalCon : AIController
     {
         MakeDecisions();
         base.Update();
+
+
     }
     public override void ChangeState(AIState newState)
     {
@@ -28,7 +33,7 @@ public class SuicidalCon : AIController
             {
                 case AIState.Idle:
                     DoIdleState();
-                    DoAquireTar();
+                    
                     if (IsDistanceLessThan(target, 10))
                     {
                         ChangeState(AIState.Chase);
@@ -54,5 +59,13 @@ public class SuicidalCon : AIController
     public void DoBomberState()
     {
         Chase(target);
+    }
+    public void Exploded()
+    {
+        if(pawn == null)
+        {
+            deathSound.Play();
+            
+        }
     }
 }

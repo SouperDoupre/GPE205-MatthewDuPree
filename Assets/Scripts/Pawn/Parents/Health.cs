@@ -1,43 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Health : MonoBehaviour
+
+public  class Health : MonoBehaviour
 {
     public float maxHealth;
     public float currentHealth;
+    public Image healthBar;
+    bool didHit;
+    public AudioSource hit;
     
     // Start is called before the first frame update
-    void Start()
+    public  void Start()
     {
+        didHit = false;
         //Sets start health to max
         currentHealth = maxHealth;
     }
 
     // Update is called once per frame
-    void Update()
+    public  void Update()
     {
-        
+        healthBar.fillAmount = currentHealth / 100;
     }
-    public void TakeDamage(float damageDone, Pawn source)
+    public  void TakeDamage(float damageDone, Pawn source)
     {
-      currentHealth = currentHealth - damageDone;
+        currentHealth = currentHealth - damageDone;
+        didHit = true;
       //Stops health from going above/below 100 or 0
       currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-      if (source != null)
+      if (source != null&&didHit)
       {
-       Debug.Log(source.name + " did " + damageDone + " damage to " + gameObject.name);
+            hit.Play();
+            didHit = false;
+            
+            Debug.Log(source.name + " did " + damageDone + " damage to " + gameObject.name);
       }
       if (currentHealth <= 0)
       {
-           Die(source);
+            if(source != null)
+            {
+                Die(source);
+            }
       }
     }
-    public void Die(Pawn source)
+    public  void Die(Pawn source)
     {
         Destroy(gameObject);
     }
-    public void Heal(float healingDone, Pawn pawn)
+    public  void Heal(float healingDone, Pawn pawn)
     {
             currentHealth = currentHealth + healingDone;
             //Stops health from going above/below 100 or 0

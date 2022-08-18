@@ -5,6 +5,8 @@ using UnityEngine;
 public class TankShoot : Shooter
 {
     // Start is called before the first frame update
+    public AudioSource shootSound;
+
     public override void Start()
     {
         
@@ -23,8 +25,9 @@ public class TankShoot : Shooter
         GameObject newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation) as GameObject;
         //Get bulletDamage
         BulletDamage bD = newBullet.GetComponent<BulletDamage>();
+        shootSound.Play();
         //If it can do damage
-        if(bD != null)
+        if (bD != null)
         {
             //this is how much damage it does
             bD.damageDone = damageDone;

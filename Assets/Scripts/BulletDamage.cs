@@ -6,11 +6,9 @@ public class BulletDamage : MonoBehaviour
 {
     public Pawn owner;
     public float damageDone;
-
     // Start is called before the first frame update
     void Start()
     {
-      
     }
 
     // Update is called once per frame
@@ -22,9 +20,9 @@ public class BulletDamage : MonoBehaviour
     {
         //Get the Health Comp from the gameObject that is being touched
         Health enemyHealth = enemy.gameObject.GetComponent<Health>();
-       
+
         //Only damage if it has Health Comp
-        if(enemyHealth != null)
+        if (enemyHealth != null)
         {
             //Call the TakeDamage function inside the enemy health component and apply the damage
             enemyHealth.TakeDamage(damageDone, owner);

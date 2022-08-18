@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : Controller
 {
@@ -9,9 +10,20 @@ public class PlayerController : Controller
     public KeyCode lookRightKey;
     public KeyCode lookLeftKey;
     public KeyCode shootKey;
+    public float startingLives;
+    public float currentLives;
+    public float score;
+    public Text scoreTotal;
+    public Text lives;
+    float bonus;
+    public const float bonusInterval = 10;
     // Start is called before the first frame update
     public override void Start()
     {
+        score = 0;
+        bonus += bonusInterval;
+        currentLives = startingLives;
+
         //If theres a GameManager
         if(GameManager.instance != null)
         {
@@ -29,16 +41,33 @@ public class PlayerController : Controller
     // Update is called once per frame
     public override void Update()
     {
-        //Runs data from parent class Controller in Update()
+        PlayerDied();
+        if(lives != null)
+        {
+            lives.text = "Lives: " + currentLives;
+        }
+        if (scoreTotal != null)
+        {
+            scoreTotal.text = "Score: " + score;
+        }
         base.Update();
+        if(score >= bonus)
+        {
+            currentLives += 1;
+            bonus += bonusInterval;
+        }
+    }
+    public void DecreaseLives(Pawn pawn)
+    {
+        currentLives = startingLives - 1;
     }
     public void OnDestroy()
     {
         //If theres a GameManager
-        if(GameManager.instance != null)
+        if (GameManager.instance != null)
         {
             //And it tracks players
-            if(GameManager.instance.players != null)
+            if (GameManager.instance.players != null)
             {
                 //Take it off the list
                 GameManager.instance.players.Remove(this);
@@ -70,7 +99,25 @@ public class PlayerController : Controller
         
         if (Input.GetKeyDown(shootKey))
         {
+            
             pawn.Shoot();
+        }
+    }
+    public void AddScore(float amount)
+    {
+        score = score + amount;
+
+    }
+    public void PlayerDied()
+    {
+        if(pawn == null)
+        {
+            DecreaseLives(pawn);
+            if(currentLives > 0)
+            {
+                Destroy(gameObject);
+                FindObjectOfType<GameManager>().SpawnPlayer();
+            }
         }
     }
 }

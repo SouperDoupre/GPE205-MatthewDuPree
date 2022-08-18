@@ -9,7 +9,6 @@ public abstract class Controller : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -26,6 +25,6 @@ public abstract class Controller : MonoBehaviour
     }
     public virtual void ProccessInputs()
     {
-
+        
     }
 }

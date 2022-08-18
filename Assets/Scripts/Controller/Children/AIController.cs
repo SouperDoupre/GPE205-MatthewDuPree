@@ -17,23 +17,30 @@ public class AIController : Controller
     public float fieldOfView;
     public float maxViewDistance;
     public LayerMask layerMask;
-
+    public AudioSource deathSound;
+    private float soundDone;
+    bool soundPlayed;
+    public float killPoint;
+    bool pawnDie;
 
     // Start is called before the first frame update
     public override void Start()
     {
+        pawnDie = false;
+        soundPlayed = false;
         //If theres a GameManager
         if (GameManager.instance != null)
         {
             //And it tracks players
-            if (GameManager.instance.AIs != null)
+            if (GameManager.instance.Enemies != null)
             {
                 //Add the player to it's list
-                GameManager.instance.AIs.Add(this);
+                GameManager.instance.Enemies.Add(this);
             }
         }
         ChangeState(AIState.Idle);
         base.Start();
+        TagetPlayerOne();
     }
     public void OnDestroy()
     {
@@ -41,10 +48,10 @@ public class AIController : Controller
         if (GameManager.instance != null)
         {
             //And it tracks players
-            if (GameManager.instance.AIs != null)
+            if (GameManager.instance.Enemies != null)
             {
                 //Take it off the list
-                GameManager.instance.AIs.Remove(this);
+                GameManager.instance.Enemies.Remove(this);
             }
         }
     }
@@ -59,20 +66,27 @@ public class AIController : Controller
     // Update is called once per frame
     public override void Update()
     {
-            MakeDecisions();
-            base.Update();
+        MakeDecisions();
+        base.Update();
+        if (pawn == null && !soundPlayed)
+        {
+            deathSound.Play();
+            soundPlayed = true;
+        }
+        Killed();
     }
+
     public virtual void MakeDecisions()
     {
         if (pawn != null)
         {
             DoAquireTar();
             if (target != null)
-            {
+            { 
+                DoAquireTar();
                 switch (currentState)
                 {
                     case AIState.Idle:
-                        
                         DoIdleState();
                         //Check for transitions
                         if (CanSee(target))
@@ -150,12 +164,14 @@ public class AIController : Controller
     //STATES
     protected virtual void DoAquireTar()
     {
-        TagetPlayerOne();
+        if (target != null)
+        {
+            TagetPlayerOne();
+        }
     }
     protected virtual void DoIdleState()
     {
         Patrol();
-        DoAquireTar();
     }
     protected virtual void DoChaseState()
     {
@@ -198,8 +214,10 @@ public class AIController : Controller
     public void Chase(Pawn targetPawn)
     {
         if(targetPawn != null)
-        //Chase the pawn's transform
-        Chase(targetPawn.transform);
+        {
+            //Chase the pawn's transform
+            Chase(targetPawn.transform);
+        }
     }
     public void Chase(Transform targetTransform)
     {
@@ -249,8 +267,13 @@ public class AIController : Controller
                 //And there are players in it
                 if (GameManager.instance.players.Count > 0)
                 {
+                    if(GameManager.instance.players[0].pawn.gameObject != null)
+                    {
+                        target = GameManager.instance.players[0].pawn.gameObject;
+                    }
+                    
                     //Then target the GameObject of the pawn of the first playercontroller on the list
-                    target = GameManager.instance.players[0].pawn.gameObject;
+                    
                 }
             }
         }
@@ -285,20 +308,35 @@ public class AIController : Controller
     //TRANSITIONS
     protected bool IsDistanceLessThan(GameObject target, float distance)
     {
-        if (Vector3.Distance(pawn.transform.position, target.transform.position) < distance)
+        if(target != null)
         {
-            return true;
+            if (Vector3.Distance(pawn.transform.position, target.transform.position) < distance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
             return false;
         }
+
     }
     protected bool IsDistanceGreaterThan(GameObject post, float distance)
     {
-        if (Vector3.Distance(pawn.transform.position, post.transform.position) > distance)
+        if(post != null)
         {
-            return true;
+            if (Vector3.Distance(pawn.transform.position, post.transform.position) > distance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
@@ -307,9 +345,16 @@ public class AIController : Controller
     }
     protected bool AmIAtBase(GameObject post, float distance)
     {
-        if (Vector3.Distance(pawn.transform.position, post.transform.position) <= distance)
+        if(post != null)
         {
-            return true;
+            if (Vector3.Distance(pawn.transform.position, post.transform.position) <= waypointStopDistance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
@@ -322,9 +367,16 @@ public class AIController : Controller
         //gets the access to the Health component
         Health health = pawn.GetComponent<Health>();
         //If current health is less than or equal to max health then
-        if (health.currentHealth <= .5f * health.maxHealth)
+        if(health != null)
         {
-            return true;
+            if (health.currentHealth <= .5f * health.maxHealth)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
@@ -380,15 +432,22 @@ public class AIController : Controller
       //Find the angle between the direction our agent is facing
       float angleToTarget = Vector3.Angle(agentToTargetVector, pawn.transform.forward);
         //if that angle is less than our field of view and in line of sight
-      if(angleToTarget < fieldOfView && agentToTargetVector.magnitude <= maxViewDistance)
-      {
-            HasLineOfSight();
-            return true;
-      }
-      else
-      {
-          return false;
-      }
+        if(target != null)
+        {
+            if (angleToTarget < fieldOfView && agentToTargetVector.magnitude <= maxViewDistance)
+            {
+                HasLineOfSight();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
     public bool HasLineOfSight()
     {
@@ -405,6 +464,13 @@ public class AIController : Controller
             }
         }
         return false;
-
+    }
+    public void Killed()
+    {
+        if(pawn == null && !pawnDie)
+        {
+            FindObjectOfType<PlayerController>().AddScore(killPoint);
+            pawnDie = true;
+        }
     }
 }

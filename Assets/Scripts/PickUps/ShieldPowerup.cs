@@ -10,7 +10,7 @@ public class ShieldPowerup : Powerup
         ShieldActivate activate = target.gameObject.GetComponent<ShieldActivate>();
         Health health = target.gameObject.GetComponent<Health>();
         activate.playerShield.SetActive(true);
-        health.GetComponent<Health>().enabled = false;
+        health.enabled = false;
     }
     public override void Remove(PowerupManager target)
     {
@@ -19,8 +19,7 @@ public class ShieldPowerup : Powerup
         if (duration < Time.time)
         {
             activate.playerShield.SetActive(false);
-            health.GetComponent<Health>().enabled = true;
-
+            health.enabled = true;
         }
     }
 }

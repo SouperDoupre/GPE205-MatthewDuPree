@@ -13,20 +13,14 @@ public class RoomManager : MonoBehaviour
     public int mapSeed;
     private Room[,] maze;
     public bool MapOfTheDay;
+    public bool isRandom;
 
     // Start is called before the first frame update
-    [Obsolete]
     void Start()
     {
-        UnityEngine.Random.seed = mapSeed;
-        GenerateMap();
-        if (MapOfTheDay)
-        {
-            mapSeed = DateToInt(DateTime.Now.Date);
-        }
     }
 
-    // Update is called once per frame
+    // Update is called once per frame 
     void Update()
     {
 
@@ -42,18 +36,30 @@ public class RoomManager : MonoBehaviour
         return dateToUse.Year + dateToUse.Month + dateToUse.Day + dateToUse.Hour + dateToUse.Minute + dateToUse.Second + dateToUse.Millisecond;
     }
 
-    [Obsolete]
-    public void GenerateMap()
+    public int GetMapSeed()
     {
-        mapSeed = (int)UnityEngine.Random.value;
+        return mapSeed;
+    }
+
+    public void GenerateMap(int mapSeed)
+    {
         //Clear out the grid - "column" is our X, "row" is our Y
         maze = new Room[columns, rows];
+        //Set our seed
+        UnityEngine.Random.InitState(mapSeed);
 
-        //For each grid row..
-        for(int currentRow = 0; currentRow < rows; currentRow++)
+        if (MapOfTheDay == true)
         {
-            //Set our seed
-            
+            UnityEngine.Random.InitState(DateToInt(DateTime.Now.Date));
+        }
+        if (isRandom == true)
+        {
+            UnityEngine.Random.InitState((int)DateTime.Now.Ticks);
+        }
+        //For each grid row..
+        for (int currentRow = 0; currentRow < rows; currentRow++)
+        {
+
             //for each column in that row
             for (int currentCol = 0; currentCol < columns; currentCol++)
             {
@@ -79,7 +85,7 @@ public class RoomManager : MonoBehaviour
 
                 //Open doors
                 //If we are on the bottom row, open the north door
-                if(currentRow == 0)
+                if (currentRow == 0)
                 {
                     tempRoom.doorNorth.SetActive(false);
                 }

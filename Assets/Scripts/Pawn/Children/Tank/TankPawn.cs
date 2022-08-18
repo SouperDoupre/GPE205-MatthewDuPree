@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class TankPawn : Pawn
 {
     Rigidbody rb;
@@ -67,4 +67,9 @@ public class TankPawn : Pawn
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, lookSpeed * Time.deltaTime);
         }
     }
+    public void OnDestroy()
+    {
+        
+    }
+
 }
