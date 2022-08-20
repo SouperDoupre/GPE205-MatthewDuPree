@@ -22,6 +22,7 @@ public class FearfulAiCon : AIController
     }
     public override void MakeDecisions()
     {
+<<<<<<< HEAD
         if(pawn != null)
         {
            switch (currentState)
@@ -65,5 +66,8 @@ public class FearfulAiCon : AIController
            }
             
         }
+=======
+
+>>>>>>> main
     }
 }

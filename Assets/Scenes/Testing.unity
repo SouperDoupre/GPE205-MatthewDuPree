@@ -123,7 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &133429071
+=======
+--- !u!1 &1005727750
+>>>>>>> main
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,6 +135,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 133429072}
   - component: {fileID: 133429074}
   - component: {fileID: 133429073}
@@ -409,11 +414,19 @@ GameObject:
   - component: {fileID: 674786942}
   m_Layer: 0
   m_Name: ExtraStuff
+=======
+  - component: {fileID: 1005727752}
+  - component: {fileID: 1005727751}
+  - component: {fileID: 1005727753}
+  m_Layer: 0
+  m_Name: GameManager
+>>>>>>> main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!4 &674786941
 Transform:
   m_ObjectHideFlags: 0
@@ -502,11 +515,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &788645249
+=======
+--- !u!114 &1005727751
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 788645246}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -612,11 +629,27 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
 --- !u!4 &788645251
+=======
+  m_GameObject: {fileID: 1005727750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63c48e4e9aa9f548aece2d02a7a7e9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players: []
+  AIs: []
+  PlaceX: 0
+  PlaceZ: 0
+  PCPreFab: {fileID: 2422755394651807586, guid: 13ad2530bfab1714a8d9c24963302b9a, type: 3}
+  TPPreFab: {fileID: 6203149938853676434, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
+--- !u!4 &1005727752
+>>>>>>> main
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 788645246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.5, y: 0, z: 0}
@@ -751,11 +784,23 @@ MeshFilter:
   m_GameObject: {fileID: 788645246}
   m_Mesh: {fileID: -3145058497754134291, guid: 8e8a3b4abc13de9489f4c865eeb1f98b, type: 3}
 --- !u!114 &788645259
+=======
+  m_GameObject: {fileID: 1005727750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1005727753
+>>>>>>> main
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 788645246}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -765,6 +810,24 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 50
   healthBar: {fileID: 133429073}
+=======
+  m_GameObject: {fileID: 1005727750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848b70b66b62d0340b4ddab149b20f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazePrefabs:
+  - {fileID: 6501798655350281744, guid: 7c89a9f06a7f4f14a8139e402c95db47, type: 3}
+  - {fileID: 7112130969634168834, guid: 83794087ba23220488f8ee619804bd4f, type: 3}
+  - {fileID: 2831353404174560602, guid: e4832ec468e80f749a3dd446ac4bdd98, type: 3}
+  rows: 5
+  columns: 5
+  mazeWidth: 50
+  mazeHeight: 50
+  mapSeed: 80131335
+  MapOfTheDay: 0
+>>>>>>> main
 --- !u!1 &1450661977
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450661977}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+<<<<<<< HEAD
   m_LocalPosition: {x: 16.491344, y: 12.396478, z: -27.301926}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1844,3 +1908,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+=======
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+>>>>>>> main

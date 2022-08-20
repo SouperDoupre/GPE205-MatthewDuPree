@@ -27,6 +27,7 @@ public  class Health : MonoBehaviour
     }
     public  void TakeDamage(float damageDone, Pawn source)
     {
+<<<<<<< HEAD
         currentHealth = currentHealth - damageDone;
         didHit = true;
       //Stops health from going above/below 100 or 0
@@ -44,13 +45,29 @@ public  class Health : MonoBehaviour
             {
                 Die(source);
             }
+=======
+      currentHealth = currentHealth - damageDone;
+      //Stops health from going above/below 100 or 0
+      currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+      if (source != null)
+      {
+       Debug.Log(source.name + " did " + damageDone + " damage to " + gameObject.name);
+      }
+      if (currentHealth <= 0)
+      {
+           Die(source);
+>>>>>>> main
       }
     }
     public  void Die(Pawn source)
     {
         Destroy(gameObject);
     }
+<<<<<<< HEAD
     public  void Heal(float healingDone, Pawn pawn)
+=======
+    public void Heal(float healingDone, Pawn pawn)
+>>>>>>> main
     {
             currentHealth = currentHealth + healingDone;
             //Stops health from going above/below 100 or 0

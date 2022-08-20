@@ -1686,11 +1686,14 @@ Transform:
   - {fileID: 1218595399868008597}
   - {fileID: 2701198374373757917}
   - {fileID: 8620784911541896503}
+<<<<<<< HEAD
   - {fileID: 1637047293233330181}
   - {fileID: 5299296958366255954}
   - {fileID: 4413077373051358138}
   - {fileID: 5541923631686358732}
   - {fileID: 7606209550424826445}
+=======
+>>>>>>> main
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2777,6 +2780,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 125571258016159445}
     - target: {fileID: 8512566129864255144, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
+<<<<<<< HEAD
+=======
+      propertyPath: isLooping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512566129864255144, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
+      propertyPath: damageDone
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512566129864255144, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
+      propertyPath: fieldOfView
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512566129864255144, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
+      propertyPath: maxViewDistance
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512566129864255144, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
+      propertyPath: waypointStopDistance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512566129864255144, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
+      propertyPath: waypoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8512566129864255144, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
+>>>>>>> main
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 515161063483585845}
@@ -2799,6 +2829,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5768505474612251099, guid: 31943212ab44c804dbcce73603ea5258, type: 3}
   m_PrefabInstance: {fileID: 179983338248058256}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &791978914820593659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2947,6 +2978,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4861440229728427177, guid: 4e98d39cacfc46545899f85c2276be37, type: 3}
   m_PrefabInstance: {fileID: 1125776830171941477}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!1001 &2058909854587020894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3028,6 +3061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be7e6cadd9549bb4491e991736269aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1001 &3096754058296360676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3250,3 +3284,5 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4861440229728427177, guid: 4e98d39cacfc46545899f85c2276be37, type: 3}
   m_PrefabInstance: {fileID: 9099848899942405907}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> main

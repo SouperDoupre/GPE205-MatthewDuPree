@@ -18,6 +18,7 @@ public class BasicAICon : AIController
     }
     public override void ChangeState(AIState newState)
     {
+<<<<<<< HEAD
         //Change the current state
         currentState = newState;
         //Save the time when we changed states
@@ -90,5 +91,12 @@ public class BasicAICon : AIController
                 }
             }
         }
+=======
+        base.ChangeState(newState);
+    }
+    public override void MakeDecisions()
+    {
+
+>>>>>>> main
     }
 }

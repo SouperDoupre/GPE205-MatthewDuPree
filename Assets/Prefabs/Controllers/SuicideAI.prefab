@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5768505474612251099}
   - component: {fileID: 8512566129864255144}
+<<<<<<< HEAD
   - component: {fileID: 1915089512080524931}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: SuicideAI
   m_TagString: Untagged
@@ -49,6 +52,7 @@ MonoBehaviour:
   target: {fileID: 0}
   post: {fileID: 0}
   fleeDistance: 0
+<<<<<<< HEAD
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -158,3 +162,13 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+  waypoints: []
+  waypointStopDistance: 0
+  fieldOfView: 0
+  maxViewDistance: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  damageDone: 0
+>>>>>>> main

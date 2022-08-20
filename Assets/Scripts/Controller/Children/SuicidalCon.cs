@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class SuicidalCon : AIController
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     public enum sAIState {TargetAqu, Idle, Chase};
     // Start is called before the first frame update
     public override void Start()
     {
+<<<<<<< HEAD
 
         DoAquireTar();
+=======
+>>>>>>> main
         base.Start();
     }
     // Update is called once per frame
@@ -18,8 +24,11 @@ public class SuicidalCon : AIController
     {
         MakeDecisions();
         base.Update();
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> main
     }
     public override void ChangeState(AIState newState)
     {
@@ -33,7 +42,11 @@ public class SuicidalCon : AIController
             {
                 case AIState.Idle:
                     DoIdleState();
+<<<<<<< HEAD
                     
+=======
+                    DoAquireTar();
+>>>>>>> main
                     if (IsDistanceLessThan(target, 10))
                     {
                         ChangeState(AIState.Chase);
@@ -55,11 +68,20 @@ public class SuicidalCon : AIController
                     break;
             }
         }
+<<<<<<< HEAD
+=======
+        else
+        {
+            return;
+        }
+
+>>>>>>> main
     }
     public void DoBomberState()
     {
         Chase(target);
     }
+<<<<<<< HEAD
     public void Exploded()
     {
         if(pawn == null)
@@ -68,4 +90,6 @@ public class SuicidalCon : AIController
             
         }
     }
+=======
+>>>>>>> main
 }

@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public Transform playerSpawnTransform;
     //List of players
     public List<PlayerController> players;
+<<<<<<< HEAD
     public List<AIController> Enemies;
     public List<RoomManager> maps;
     RoomManager roomManager;
@@ -26,8 +27,14 @@ public class GameManager : MonoBehaviour
     public GameStates currentState;
     private float lastStateChangeTime;
     public Camera overlayCam;
+=======
+    public List<AIController> AIs;
+    RoomManager roomManager;
+>>>>>>> main
     private void Awake()
     {
+        roomManager = GetComponent<RoomManager>();
+        
         //If the instance doesn't exist yet...
         if (instance == null)
         {
@@ -86,6 +93,7 @@ public class GameManager : MonoBehaviour
     public GameObject PCPreFab;
     public GameObject TPPreFab;
 
+<<<<<<< HEAD
     private void DeactivateAllStates()
     {
         //Deactivate all Game States
@@ -330,5 +338,10 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0f;
                 break;
         }
+=======
+    public void SpawnEnemy()
+    {
+
+>>>>>>> main
     }
 }

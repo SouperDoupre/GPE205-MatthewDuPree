@@ -2739,6 +2739,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &3421920587174402139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2829,6 +2830,8 @@ Transform:
   m_Father: {fileID: 6501798655350252144}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> main
 --- !u!1 &5561216568795010368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3742,6 +3745,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &6101218518840242256
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,6 +3776,8 @@ Transform:
   m_Father: {fileID: 6501798655350252144}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> main
 --- !u!1 &6501798655350281728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4292,6 +4298,7 @@ Transform:
   - {fileID: 2403629503977005586}
   - {fileID: 6128945869455030373}
   - {fileID: 281935862219817672}
+<<<<<<< HEAD
   - {fileID: 5643894798991994703}
   - {fileID: 4016047681819684150}
   - {fileID: 2122393116264467635}
@@ -4301,6 +4308,8 @@ Transform:
   - {fileID: 4870692006097578454}
   - {fileID: 9173398343512284352}
   - {fileID: 5101037799313624209}
+=======
+>>>>>>> main
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5080,6 +5089,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &413707724777082936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5465,3 +5475,5 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4369146220508937116, guid: cd8e0a1e021300f46add38fbd24c5f49, type: 3}
   m_PrefabInstance: {fileID: 9167780473083728458}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> main

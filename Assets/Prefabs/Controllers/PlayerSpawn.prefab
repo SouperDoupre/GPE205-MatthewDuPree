@@ -43,6 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43e61b94e3669fe47b3b99df5441ef9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Player: {fileID: 6203149938853676434, guid: bfb438e29e8c9c34c9d141d3facfb2b5, type: 3}
   PlaceX: 0
   PlaceZ: 0
+=======
+>>>>>>> main

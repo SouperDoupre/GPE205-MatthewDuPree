@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1 &1642459831348456881
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +102,8 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+=======
+>>>>>>> main
 --- !u!1 &2422755394651807586
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,8 +131,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< HEAD
   m_Children:
   - {fileID: 4265725046975690208}
+=======
+  m_Children: []
+>>>>>>> main
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -151,6 +158,7 @@ MonoBehaviour:
   lookRightKey: 100
   lookLeftKey: 97
   shootKey: 323
+<<<<<<< HEAD
   startingLives: 1
   currentLives: 0
   score: 0
@@ -314,3 +322,5 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+=======
+>>>>>>> main

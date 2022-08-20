@@ -26,16 +26,26 @@ public class AIController : Controller
     // Start is called before the first frame update
     public override void Start()
     {
+<<<<<<< HEAD
         pawnDie = false;
         soundPlayed = false;
+=======
+>>>>>>> main
         //If theres a GameManager
         if (GameManager.instance != null)
         {
             //And it tracks players
+<<<<<<< HEAD
             if (GameManager.instance.Enemies != null)
             {
                 //Add the player to it's list
                 GameManager.instance.Enemies.Add(this);
+=======
+            if (GameManager.instance.AIs != null)
+            {
+                //Add the player to it's list
+                GameManager.instance.AIs.Add(this);
+>>>>>>> main
             }
         }
         ChangeState(AIState.Idle);
@@ -52,6 +62,19 @@ public class AIController : Controller
             {
                 //Take it off the list
                 GameManager.instance.Enemies.Remove(this);
+            }
+        }
+    }
+    public void OnDestroy()
+    {
+        //If theres a GameManager
+        if (GameManager.instance != null)
+        {
+            //And it tracks players
+            if (GameManager.instance.AIs != null)
+            {
+                //Take it off the list
+                GameManager.instance.AIs.Remove(this);
             }
         }
     }
@@ -75,18 +98,29 @@ public class AIController : Controller
         }
         Killed();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     public virtual void MakeDecisions()
     {
         if (pawn != null)
         {
             DoAquireTar();
             if (target != null)
+<<<<<<< HEAD
             { 
                 DoAquireTar();
                 switch (currentState)
                 {
                     case AIState.Idle:
+=======
+            {
+                switch (currentState)
+                {
+                    case AIState.Idle:
+                        
+>>>>>>> main
                         DoIdleState();
                         //Check for transitions
                         if (CanSee(target))
@@ -172,6 +206,7 @@ public class AIController : Controller
     protected virtual void DoIdleState()
     {
         Patrol();
+        DoAquireTar();
     }
     protected virtual void DoChaseState()
     {
@@ -398,12 +433,18 @@ public class AIController : Controller
             return false;
         }
         //If they arent making noise also false
-        if (noiseMaker.noise <= 0)
+        if (noiseMaker.volumeDistance <= 0)
         {
             return false;
         }
         //if they are making noise, add volumeDistance in the noiseMaker to the hearinfDistance of this AI
+<<<<<<< HEAD
         if(noiseMaker.noise >= 1)
+=======
+        float totalDistance = noiseMaker.volumeDistance + pawn.hearingDistance;
+        //if the distance between our pawn and the target is closer than this...
+        if (Vector3.Distance(pawn.transform.position, target.transform.position) <= totalDistance)
+>>>>>>> main
         {
             float totalDistance = noiseMaker.noise + pawn.hearingDistance;
             //if the distance between our pawn and the target is closer than this...

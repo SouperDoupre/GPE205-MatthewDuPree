@@ -24,15 +24,21 @@ public abstract class Pawn : MonoBehaviour
     public float hearingDistance;
     public bool isLooping;
     public float damageDone;
+<<<<<<< HEAD
     public Controller controller;
 
 
+=======
+  
+    
+>>>>>>> main
 
     // Start is called before the first frame update
     public virtual void Start()
     {
         move = GetComponent<Movement>();
         shooter = GetComponent<Shooter>();
+   
     }
 
     // Update is called once per frame
@@ -49,5 +55,4 @@ public abstract class Pawn : MonoBehaviour
     public abstract void LookLeft();
     public abstract void Shoot();
     public abstract void RotateTowards(Vector3 tagetPosition);
-
 }

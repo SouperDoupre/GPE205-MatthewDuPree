@@ -13,6 +13,7 @@ public class RoomManager : MonoBehaviour
     public int mapSeed;
     private Room[,] maze;
     public bool MapOfTheDay;
+<<<<<<< HEAD
     public bool isRandom;
 
     // Start is called before the first frame update
@@ -21,6 +22,22 @@ public class RoomManager : MonoBehaviour
     }
 
     // Update is called once per frame 
+=======
+
+    // Start is called before the first frame update
+    [Obsolete]
+    void Start()
+    {
+        
+        GenerateMap();
+        if (MapOfTheDay)
+        {
+            mapSeed = DateToInt(DateTime.Now.Date);
+        }
+    }
+
+    // Update is called once per frame
+>>>>>>> main
     void Update()
     {
 
@@ -36,6 +53,7 @@ public class RoomManager : MonoBehaviour
         return dateToUse.Year + dateToUse.Month + dateToUse.Day + dateToUse.Hour + dateToUse.Minute + dateToUse.Second + dateToUse.Millisecond;
     }
 
+<<<<<<< HEAD
     public int GetMapSeed()
     {
         return mapSeed;
@@ -60,6 +78,21 @@ public class RoomManager : MonoBehaviour
         for (int currentRow = 0; currentRow < rows; currentRow++)
         {
 
+=======
+
+    [Obsolete]
+    public void GenerateMap()
+    {
+        //Set our seed
+        UnityEngine.Random.seed = mapSeed;
+
+        //Clear out the grid - "column" is our X, "row" is our Y
+        maze = new Room[columns, rows];
+
+        //For each grid row..
+        for(int currentRow = 0; currentRow < rows; currentRow++)
+        {
+>>>>>>> main
             //for each column in that row
             for (int currentCol = 0; currentCol < columns; currentCol++)
             {
@@ -85,7 +118,11 @@ public class RoomManager : MonoBehaviour
 
                 //Open doors
                 //If we are on the bottom row, open the north door
+<<<<<<< HEAD
                 if (currentRow == 0)
+=======
+                if(currentRow == 0)
+>>>>>>> main
                 {
                     tempRoom.doorNorth.SetActive(false);
                 }

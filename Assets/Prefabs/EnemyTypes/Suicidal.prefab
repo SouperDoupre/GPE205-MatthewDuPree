@@ -1,5 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
 --- !u!1 &2511775330886745798
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +176,8 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+=======
+>>>>>>> main
 --- !u!1 &7792339991131751323
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +196,10 @@ GameObject:
   - component: {fileID: 2948394694229092758}
   - component: {fileID: 2499189252948050842}
   - component: {fileID: 2047623980}
+<<<<<<< HEAD
   - component: {fileID: 8666851262212410893}
+=======
+>>>>>>> main
   m_Layer: 0
   m_Name: Suicidal
   m_TagString: Untagged
@@ -208,15 +214,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7792339991131751323}
+<<<<<<< HEAD
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+=======
+  m_LocalRotation: {x: 0, y: 0.100309566, z: 0, w: 0.9949563}
+>>>>>>> main
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1269700957590218865}
+<<<<<<< HEAD
   - {fileID: 7190693268403864157}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 11.514, z: 0}
+>>>>>>> main
 --- !u!33 &5820894643164141188
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -324,6 +340,10 @@ MonoBehaviour:
   shooter: {fileID: 0}
   bullet: {fileID: 5924587623343873218, guid: 5b6a6af9f34e8f34d8cbca881ca84b8f, type: 3}
   bulletSpeed: 1000
+<<<<<<< HEAD
+=======
+  damageDone: 10
+>>>>>>> main
   lifespan: 2
   fireRate: 2
   move: {fileID: 8051060425875243671}
@@ -331,8 +351,11 @@ MonoBehaviour:
   lookSpeed: 360
   hearingDistance: 10
   isLooping: 0
+<<<<<<< HEAD
   damageDone: 10
   controller: {fileID: 0}
+=======
+>>>>>>> main
 --- !u!114 &2948394694229092758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,8 +383,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
+<<<<<<< HEAD
   healthBar: {fileID: 6618047274410833382}
   hit: {fileID: 8666851262212410893}
+=======
+>>>>>>> main
 --- !u!135 &2047623980
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -375,6 +401,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0.6, z: 0.97}
+<<<<<<< HEAD
 --- !u!82 &8666851262212410893
 AudioSource:
   m_ObjectHideFlags: 0
@@ -471,6 +498,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> main
 --- !u!1 &7831879474810713331
 GameObject:
   m_ObjectHideFlags: 0

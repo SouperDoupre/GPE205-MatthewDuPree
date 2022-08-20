@@ -121,6 +121,7 @@ Canvas:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600018718578857248}
   m_Enabled: 1
+<<<<<<< HEAD
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 8900064331420028011}
@@ -249,6 +250,8 @@ MonoBehaviour:
   m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> main
 --- !u!1 &4674223350915208870
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +367,10 @@ GameObject:
   - component: {fileID: 2224102696031976945}
   - component: {fileID: -3072158199398972460}
   - component: {fileID: -428957425500342396}
+<<<<<<< HEAD
   - component: {fileID: 2990720029198318833}
+=======
+>>>>>>> main
   m_Layer: 3
   m_Name: PlayerTank
   m_TagString: Player
@@ -386,7 +392,10 @@ Transform:
   - {fileID: 3146632560671846008}
   - {fileID: 373610744860985741}
   - {fileID: 2561721665545033244}
+<<<<<<< HEAD
   - {fileID: 6079217011641840320}
+=======
+>>>>>>> main
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -404,8 +413,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 50
+<<<<<<< HEAD
   healthBar: {fileID: 3807767822375809137}
   hit: {fileID: 2990720029198318833}
+=======
+>>>>>>> main
 --- !u!33 &7706238650633375885
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -534,7 +546,10 @@ MonoBehaviour:
   hearingDistance: 0
   isLooping: 0
   damageDone: 10
+<<<<<<< HEAD
   controller: {fileID: 2422755394651807585, guid: 13ad2530bfab1714a8d9c24963302b9a, type: 3}
+=======
+>>>>>>> main
 --- !u!114 &2224102696031976945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,7 +563,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 3146632560671846008}
+<<<<<<< HEAD
   shootSound: {fileID: 2990720029198318833}
+=======
+>>>>>>> main
 --- !u!114 &-3072158199398972460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +580,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volumeDistance: 5
+<<<<<<< HEAD
   noise: 0
+=======
+>>>>>>> main
   moveForewardKey: 119
   moveBackwardKey: 115
 --- !u!114 &-428957425500342396
@@ -577,6 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d765085855deb144d87e41394339868a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!82 &2990720029198318833
 AudioSource:
   m_ObjectHideFlags: 0
@@ -673,6 +695,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+>>>>>>> main
 --- !u!1 &6234559736724157178
 GameObject:
   m_ObjectHideFlags: 0
